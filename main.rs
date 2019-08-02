@@ -7,12 +7,13 @@ struct Machine {
     buf: Vec<u8>,
     stack: Vec<u16>,
     pos: usize,
-    reg: [u16; 8]
+    reg: [u16; 8],
+    input: Vec<char>
 }
 
 impl Machine {
     fn load() -> Machine {
-        let mut m = Machine { pos: 0, buf: Vec::new(), reg: [0; 8], stack: Vec::new() };
+        let mut m = Machine { pos: 0, buf: Vec::new(), reg: [0; 8], stack: Vec::new(), input: Vec::new() };
         let mut f = File::open("challenge.bin").unwrap();
         f.read_to_end(&mut m.buf).unwrap();
         m
@@ -82,12 +83,20 @@ impl Machine {
         let rloc = self.stack_pop();
         self.jump(rloc);
     }
+
+    fn inp(&mut self) -> u16 {
+        if self.input.len() == 0 {
+            let mut s = String::new();
+            io::stdin().read_line(&mut s).unwrap();
+            self.input = s.chars().collect();
+        }
+
+        self.input.remove(0) as u16
+    }
 }
 
 fn main() -> io::Result<()> {
     let mut m = Machine::load();
-
-    print!("total size {}\n", m.buf.len());
 
     loop {
         let op = m.next_val();
@@ -112,7 +121,8 @@ fn main() -> io::Result<()> {
             17 => { let gosub = m.next_val(); m.call(gosub); },
             18 => { m.ret(); },
             19 => { print!("{}", m.next_val() as u8 as char); },
-            21 => {},
+            20 => { let reg = m.next_reg(); let val = m.inp(); m.set_reg(reg, val); },
+            21 => { },
             _ => { print!("unknown op {}\n", op); break; }
         }
     }

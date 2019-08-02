@@ -1,0 +1,5 @@
+red coin - two dots
+concave coin - seven dots
+blue coin - nine dots
+corroded coin - triangle
+shiny coin - pentagon

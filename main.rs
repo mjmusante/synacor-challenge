@@ -25,7 +25,18 @@ impl Machine {
         self.pos += 2;
 
         if rslt > 32767 {
-            self.reg[(rslt - 32768) as usize]
+            let reg = (rslt - 32768) as usize;
+            let ans = self.reg[reg];
+
+            if reg == 7 {
+                print!("[[OOB: r7 read {}]]", self.reg[7]);
+                if self.reg[7] == 1 {
+                    print!("[[OOB: pc={}]]", self.pos / 2);
+                    ::std::process::exit(1);
+                }
+                self.reg[7] = 1;
+            }
+            ans
         } else {
             rslt
         }
@@ -63,6 +74,7 @@ impl Machine {
 
     fn set_reg(&mut self, r: usize, v: u16) {
         self.reg[r] = v;
+        if r == 7 { print!("[[OOB:set r7 to {}]]", v); }
     }
 
     fn stack_push(&mut self, v: u16) {

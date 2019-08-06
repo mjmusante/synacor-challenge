@@ -1,0 +1,9 @@
+[package]
+name = "dbgr"
+version = "0.1.0"
+authors = ["Mark Musante <mark.musante@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+tui = "0.5"
+termion = "1.5"

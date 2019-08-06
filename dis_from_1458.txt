@@ -1,0 +1,334 @@
+1458 push r0            save regs
+1460 push r3
+1462 push r4
+1464 push r5
+1466 push r6
+1468 set r6 r0                      r6 = r0
+1471 set r5 r1                      r5 = r1
+1474 rmem r4 r0                     r4 = [r0]
+1477 set r1 0                       r1 = 0
+1480 add r3 1 r1            1480    r3 = 1 + r1
+1484 gt r0 r3 r4                    if r3 > r4
+1488 jt r0 1507                     then goto return
+1491 add r3 r3 r6                   r3 += r6
+1495 rmem r0 r3                     r0 = [r3]
+1498 call r5                        call r5
+1500 add r1 r1 1                    r1++
+1504 jt r1 1480                     if r1 != 0 then goto 1480
+1507 pop r6
+1509 pop r5
+1511 pop r4                 return
+1513 pop r3
+1515 pop r0
+1517 ret
+
+
+1518 push r1
+1520 set r1 1528
+1523 call 1458
+1525 pop r1
+1527 ret
+
+
+1528 out r0
+1530 ret
+
+
+1531 push r1
+1533 set r1 r2
+1536 call 2125
+1538 out r0
+1540 pop r1
+1542 ret
+
+
+1543 push r1
+1545 push r3
+1547 rmem r3 r0
+1550 jf r3 1563
+1553 call 1458
+1555 jt r1 1563
+1558 set r0 r2
+1561 jmp 1566
+1563 set r0 32767
+1566 pop r3
+1568 pop r1
+1570 ret
+
+
+1571 push r1
+1573 push r2
+1575 set r2 r1
+1578 set r1 1605
+1581 call 1543
+1583 pop r2
+1585 pop r1
+1587 ret
+
+
+1588 push r1
+1590 push r2
+1592 set r2 r1
+1595 set r1 1648
+1598 call 1543
+1600 pop r2
+1602 pop r1
+1604 ret
+1605 eq r0 r0 r2
+1609 jf r0 1618
+1612 set r2 r1
+1615 set r1 32767
+1618 ret
+1619 push r3
+1621 add r3 r2 1
+1625 add r3 r3 r1
+1629 rmem r3 r3
+1632 eq r3 r0 r3
+1636 jt r3 1645
+1639 set r2 r1
+1642 set r1 32767
+1645 pop r3
+1647 ret
+1648 push r1
+1650 set r1 r2
+1653 call 1667
+1655 pop r1
+1657 jf r0 1666
+1660 set r2 r1
+1663 set r1 32767
+1666 ret
+1667 push r1
+1669 push r2
+1671 push r3
+1673 push r4
+1675 rmem r3 r0
+1678 rmem r4 r1
+1681 eq r2 r3 r4
+1685 jf r2 1711
+1688 or r2 r3 r4
+1692 jf r2 1706
+1695 set r2 r1
+1698 set r1 1619
+1701 call 1458
+1703 jf r1 1711
+1706 set r0 1
+1709 jmp 1714
+1711 set r0 0
+1714 pop r4
+1716 pop r3
+1718 pop r2
+1720 pop r1
+1722 ret
+1723 push r0
+1725 push r1
+1727 set r1 6068
+1730 rmem r0 r1
+1733 push r1
+1735 mult r1 r1 r1
+1739 call 2125
+1741 set r1 16724
+1744 call 2125
+1746 pop r1
+1748 wmem r1 r0
+1751 add r1 r1 1
+1755 eq r0 30050 r1
+1759 jf r0 1730
+1762 pop r1
+1764 pop r0
+1766 ret
+1767 push r0
+1769 push r2
+1771 push r3
+1773 push r4
+1775 push r5
+1777 add r2 r1 r0
+1781 set r0 r1
+1784 set r5 0
+1787 add r0 r0 1
+1791 gt r3 r0 r2
+1795 jt r3 1816
+1798 in r4
+1800 eq r3 r4 10
+1804 jt r3 1816
+1807 wmem r0 r4
+1810 add r5 r5 1
+1814 jmp 1787
+1816 wmem r1 r5
+1819 eq r3 r4 10
+1823 jt r3 1830
+1826 in r4
+1828 jmp 1819
+1830 pop r5
+1832 pop r4
+1834 pop r3
+1836 pop r2
+1838 pop r0
+1840 ret
+1841 push r3
+1843 push r4
+1845 push r5
+1847 push r6
+1849 set r6 1
+1852 add r4 r3 r6
+1856 rmem r4 r4
+1859 add r5 6125 r6
+1863 wmem r5 r4
+1866 add r6 r6 1
+1870 rmem r5 6125
+1873 gt r4 r6 r5
+1877 jf r4 1852
+1880 set r3 0
+1883 set r4 0
+1886 rmem r5 6125
+1889 mod r5 r4 r5
+1893 add r5 r5 6125
+1897 add r5 r5 1
+1901 rmem r6 r5
+1904 mult r6 r6 5249
+1908 add r6 r6 12345
+1912 wmem r5 r6
+1915 push r0
+1917 push r1
+1919 set r1 r6
+1922 call 2125
+1924 set r6 r0
+1927 pop r1
+1929 pop r0
+1931 rmem r5 r1
+1934 mod r6 r6 r5
+1938 add r6 r6 1
+1942 gt r5 r6 r2
+1946 jt r5 1952
+1949 set r3 1
+1952 add r6 r6 r1
+1956 rmem r6 r6
+1959 add r4 r4 1
+1963 add r5 r4 6129
+1967 wmem r5 r6
+1970 rmem r5 6129
+1973 eq r5 r4 r5
+1977 jf r5 1886
+1980 jf r3 1880
+1983 push r0
+1985 set r0 6129
+1988 call 1518
+1990 pop r0
+1992 pop r6
+1994 pop r5
+1996 pop r4
+1998 pop r3
+2000 ret
+2001 push r0
+2003 push r1
+2005 push r2
+2007 push r3
+2009 push r4
+2011 push r5
+2013 set r2 1
+2016 set r5 0
+2019 jf r0 2092
+2022 eq r4 r2 10000
+2026 set r3 r0
+2029 jt r4 2040
+2032 mult r1 r2 10
+2036 mod r3 r0 r1
+2040 set r4 0
+2043 mult r2 r2 32767
+2047 jf r3 2060
+2050 add r4 r4 1
+2054 add r3 r3 r2
+2058 jmp 2047
+2060 mult r2 r2 32767
+2064 mult r3 r4 r2
+2068 mult r3 r3 32767
+2072 add r0 r0 r3
+2076 add r4 r4 48
+2080 mult r2 r2 10
+2084 add r5 r5 1
+2088 push r4
+2090 jmp 2019
+2092 jt r5 2099
+2095 out 48
+2097 jmp 2112
+2099 jf r5 2112
+2102 pop r0
+2104 out r0
+2106 add r5 r5 32767
+2110 jmp 2099
+2112 pop r5
+2114 pop r4
+2116 pop r3
+2118 pop r2
+2120 pop r1
+2122 pop r0
+2124 ret
+2125 push r1
+2127 push r2
+2129 and r2 r0 r1
+2133 not r2 r2
+2136 or r0 r0 r1
+2140 and r0 r0 r2
+2144 pop r2
+2146 pop r1
+2148 ret
+2149 add r0 r0 r1
+2153 gt r1 r1 r0
+2157 ret
+2158 push r2
+2160 gt r2 r1 r0
+2164 mult r1 r1 32767
+2168 add r0 r0 r1
+2172 set r1 r2
+2175 pop r2
+2177 ret
+2178 jf r0 2241
+2181 jf r1 2241
+2184 push r2
+2186 push r3
+2188 gt r2 r1 r0
+2192 jt r2 2204
+2195 set r2 r0
+2198 set r0 r1
+2201 set r1 r2
+2204 set r2 r0
+2207 set r0 0
+2210 add r0 r0 r1
+2214 gt r3 r1 r0
+2218 jt r3 2233
+2221 add r2 r2 32767
+2225 jt r2 2210
+2228 set r1 0
+2231 jmp 2236
+2233 set r1 1
+2236 pop r3
+2238 pop r2
+2240 ret
+2241 set r0 0
+2244 set r1 0
+2247 ret
+2248 push r1
+2250 push r2
+2252 jf r1 2276
+2255 add r1 r1 32767
+2259 and r2 r0 16384
+2263 mult r0 r0 2
+2267 jf r2 2252
+2270 or r0 r0 1
+2274 jmp 2252
+2276 pop r2
+2278 pop r1
+2280 ret
+2281 push r1
+2283 gt r1 r0 14
+2287 jt r1 2309
+2290 set r1 r0
+2293 set r0 1
+2296 jf r1 2312
+2299 add r1 r1 32767
+2303 mult r0 r0 2
+2307 jmp 2296
+2309 set r0 32767
+2312 pop r1
+2314 ret
+2315 jmp 2734
+unknown op 6142

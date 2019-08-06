@@ -1,0 +1,185 @@
+5605 push r0
+5607 push r1
+5609 push r2
+5611 set r0 29545
+5614 set r1 1531
+5617 add r2 11164 4571
+5621 call 1458                      -> 1458(29545, 1531, 15735)
+5623 pop r2
+5625 pop r1
+5627 pop r0
+5629 set r0 0
+5632 add r2 1 27101
+5636 rmem r1 r2
+5639 add r0 r0 r1
+5643 mult r0 r0 31660
+5647 call 2125
+5649 rmem r1 27101
+5652 add r1 r1 27101
+5656 add r2 r2 1
+5660 gt r1 r2 r1
+5664 jf r1 5636
+5667 set r1 25866
+5670 set r2 32767
+5673 push r3
+5675 set r3 29663
+5678 call 1841
+5680 pop r3
+5682 push r0
+5684 push r1
+5686 push r2
+5688 set r0 29667
+5691 set r1 1531
+5694 add r2 26233 3050
+5698 call 1458
+5700 pop r2
+5702 pop r1
+5704 pop r0
+5706 wmem 2732 2488
+5709 wmem 2733 0
+5712 jmp 5714
+5714 pop r2
+5716 pop r1
+5718 pop r0
+5720 ret
+5721 push r0
+5723 push r1
+5725 push r2
+5727 push r3
+5729 push r0
+5731 push r1
+5733 push r2
+5735 set r0 29757
+5738 set r1 1531
+5741 add r2 11062 2987
+5745 call 1458
+5747 pop r2
+5749 pop r1
+5751 pop r0
+5753 rmem r0 3955
+5756 rmem r1 3956
+5759 call 2125
+5761 rmem r1 3957
+5764 call 2125
+5766 set r1 25919
+5769 set r2 4
+5772 push r3
+5774 set r3 29942
+5777 call 1841
+5779 pop r3
+5781 push r0
+5783 push r1
+5785 push r2
+5787 set r0 29946
+5790 set r1 1531
+5793 add r2 1671 1266
+5797 call 1458
+5799 pop r2
+5801 pop r1
+5803 pop r0
+5805 pop r3
+5807 pop r2
+5809 pop r1
+5811 pop r0
+5813 ret
+5814 out 45
+5816 out 32
+5818 call 1518
+5820 out 10
+5822 ret
+5823 push r1
+5825 push r2
+5827 set r0 27381
+5830 set r1 5846
+5833 set r2 0
+5836 call 1458
+5838 set r0 r2
+5841 pop r2
+5843 pop r1
+5845 ret
+5846 push r3
+5848 push r4
+5850 rmem r3 2732
+5853 add r4 r0 2
+5857 rmem r4 r4
+5860 eq r3 r3 r4
+5864 jf r3 5871
+5867 add r2 r2 1
+5871 pop r4
+5873 pop r3
+5875 ret
+5876 push r0
+5878 push r1
+5880 set r0 27381
+5883 set r1 5893
+5886 call 1458
+5888 pop r1
+5890 pop r0
+5892 ret
+5893 push r3
+5895 add r3 r0 2
+5899 rmem r3 r3
+5902 eq r3 r2 r3
+5906 jf r3 5918
+5909 add r0 r0 0
+5913 rmem r0 r0
+5916 call 5814
+5918 pop r3
+5920 ret
+5921 push r1
+5923 push r2
+5925 set r2 r0
+5928 set r0 27381
+5931 set r1 5964
+5934 call 1543
+5936 eq r1 r0 32767
+5940 jt r1 5956
+5943 add r1 27381 r0
+5947 add r1 r1 1
+5951 rmem r0 r1
+5954 jmp 5959
+5956 set r0 0
+5959 pop r2
+5961 pop r1
+5963 ret
+5964 push r1
+5966 set r1 r2
+5969 add r0 r0 0
+5973 rmem r0 r0
+5976 call 1667
+5978 pop r1
+5980 jf r0 5989
+5983 set r2 r1
+5986 set r1 32767
+5989 ret
+5990 push r1
+5992 push r2
+5994 add r0 r0 2
+5998 rmem r0 r0
+6001 jf r0 6019
+6004 rmem r1 2732
+6007 eq r1 r0 r1
+6011 jt r1 6019
+6014 set r0 0
+6017 jmp 6022
+6019 set r0 1
+6022 pop r2
+6024 pop r1
+6026 ret
+6027 jt r0 6035
+6030 add r0 r1 1
+6034 ret
+6035 jt r1 6048
+6038 add r0 r0 32767
+6042 set r1 r7
+6045 call 6027
+6047 ret
+6048 push r0
+6050 add r1 r1 32767
+6054 call 6027
+6056 set r1 r0
+6059 pop r0
+6061 add r0 r0 32767
+6065 call 6027
+6067 ret
+unknown op 6095
